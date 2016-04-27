@@ -33,15 +33,42 @@ function ec2 --argument-names subcommand
 
     case ls
 
-      set -l instances (spin "aws --output json ec2 describe-instances \
-        --filters \
-          'Name=key-name,Values=aalekhin' \
-          'Name=instance-state-name,Values=running,pending' \
-        ")
+      set request "aws --output json ec2 describe-instances"
 
-      echo $instances | \
-      jq '[ .Reservations | .[] | .Instances | .[] | {id: .InstanceId, key: .KeyName, type: .InstanceType, state: .State.Name,
-      group: .Tags | map(select(.Key? == "group")) | .[0]?.Value? } ]'
+      set instances (
+        spin --format=" @ $request \r" $request
+      )
+
+      set header "id,keypair,type,state,group,name" \
+                 " , , , , , " # an empty row after header
+
+      set rows (
+        echo $instances \
+        | jq -r '
+            [ .Reservations? | .[] | .Instances | .[] |
+              [
+                .InstanceId,
+                .KeyName,
+                .InstanceType,
+                .State.Name,
+                (.Tags | map(select(.Key? == "group")) | .[0]?.Value?) // " ",
+                (.Tags | map(select(.Key? == "Name"))  | .[0]?.Value?) // " "
+              ] | map(tostring) | join(",")
+            ] | join("\n")
+          '
+      )
+
+      set table (
+        for r in $header $rows
+          echo $r
+        end \
+        | column -s ',' -t
+      )
+
+      tput el # erase the spinner line
+      for r in $table
+        echo $r
+      end
 
     case '*'
       set_color red; echo "Unknown subcommand "($subcommand)""
