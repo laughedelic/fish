@@ -1,4 +1,4 @@
-function dir
-	mkdir -p $argv[1]
-  cd $argv[1]
+function dir -a path -d "Creates subdirectories and jumps inside"
+	mkdir -p $path
+  and cd $path
 end
