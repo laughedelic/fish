@@ -1,9 +1,9 @@
 # from https://gist.github.com/siteshwar/5472791
-function logo
+function fish_logo
   echo (set_color red)'                 ___
    ___======____='(set_color yellow)'---='(set_color red)')
  /T            \_'(set_color yellow)'--==='(set_color red)')
- L \ '(set_color yellow)'(@)   '(set_color red)'\~    \_'(set_color yellow)'-=='(set_color red)')
+ L \ '(set_color yellow)'(0)   '(set_color red)'\~    \_'(set_color yellow)'-=='(set_color red)')
   \      / )J'(set_color yellow)'~~    '(set_color red)'\\'(set_color yellow)'-='(set_color red)')
    \\\\___/  )JJ'(set_color yellow)'~~    '(set_color red)'\)
     \_____/JJJ'(set_color yellow)'~~      '(set_color red)'\
