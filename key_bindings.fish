@@ -6,5 +6,5 @@ function key_bindings
     # resets the command line, but leaves the command (without executing it)
     bind \cx 'echo; commandline -f repaint; commandline -r ""'
 
-    bind \cf 'accept-autosuggestion; execute'
+    bind \cf 'accept-autosuggestion execute'
 end
