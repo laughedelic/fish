@@ -5,13 +5,14 @@ set -U Z_CMD "j"
 set -U VISUAL "atom-beta --wait"
 set -U EDITOR $VISUAL
 
-set -U fish_color_search_match --background=cyan
+# VI-keybindings:
+fish_vi_key_bindings
+fish_vi_cursor
 
-set -l IFS; set -U fish_greeting (fish_logo); set -e IFS
+# remove when fish-2.3.1 is released (https://github.com/fish-shell/fish-shell/issues/3067)
+# set -g __fish_vi_mode 0
 
-# set -g fish_key_bindings fish_vi_key_bindings
-
-# set -g fish_cursor_default underscore
-# set -g fish_cursor_insert line
-# # set -g fish_cursor_replace-one underscore
-# set -g fish_cursor_visual underscore
+set -g fish_cursor_default block
+set -g fish_cursor_insert line
+set -g fish_cursor_visual underscore
+# set -g 'fish_cursor_replace-one' underscore
