@@ -16,3 +16,5 @@ set -g fish_cursor_default block
 set -g fish_cursor_insert line
 set -g fish_cursor_visual underscore
 # set -g 'fish_cursor_replace-one' underscore
+
+set -x LANG 'en_US.UTF-8'
