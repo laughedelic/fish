@@ -2,15 +2,12 @@
 set -U Z_CMD "j"
 
 # default editor
-set -U VISUAL "atom-beta --wait"
-set -U EDITOR $VISUAL
+set -x VISUAL "atom --safe --wait"
+set -x EDITOR $VISUAL
 
-# VI-keybindings:
-fish_vi_key_bindings
+# Vi + Emacs keybindings:
+fish_hybrid_key_bindings
 fish_vi_cursor
-
-# remove when fish-2.3.1 is released (https://github.com/fish-shell/fish-shell/issues/3067)
-# set -g __fish_vi_mode 0
 
 set -g fish_cursor_default block
 set -g fish_cursor_insert line
