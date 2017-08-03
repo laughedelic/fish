@@ -1,3 +1,3 @@
 function l -d "An alias for exa"
-    exa $argv
+    exa --classify --group-directories-first $argv
 end
