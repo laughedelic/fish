@@ -1,4 +1,8 @@
 function indent --argument file
-    cat $file | fish_indent >$file
+    set -l indented (fish_indent < $file)
+    rm $file
+    for line in $indented
+        echo $line >> $file
+    end
     cat $file
 end
