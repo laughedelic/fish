@@ -11,7 +11,7 @@ if not set -q _abbr_set
     abbr rmrf 'rm -rf'
 
     # aws:
-    abbr awsls 'aws s3 ls --human-readable s3://'
+    abbr awsls 'aws s3 ls --human-readable'
 
     # git:
     abbr g    'git'
@@ -29,6 +29,10 @@ if not set -q _abbr_set
     abbr gd   'git diff'
     abbr gp   'git push'
     abbr gl   'git pull'
+    abbr gpr  'git pull-request'
+    abbr gdm  'git delete-merged-branches'
+    abbr glg  'git log'
+    abbr glg1 'git log --oneline'
 
     # exa:
     abbr la 'll -a'
