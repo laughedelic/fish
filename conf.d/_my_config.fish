@@ -9,9 +9,9 @@ set -x EDITOR $VISUAL
 fish_hybrid_key_bindings
 fish_vi_cursor
 
-set -g fish_cursor_default block
-set -g fish_cursor_insert line
-set -g fish_cursor_visual underscore
+# set -x fish_cursor_default block
+# set -x fish_cursor_insert line
+# set -x fish_cursor_visual underscore
 # set -g 'fish_cursor_replace-one' underscore
 
 set -x LANG 'en_US.UTF-8'
