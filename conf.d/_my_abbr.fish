@@ -9,6 +9,7 @@ if not set -q _abbr_set
     abbr ab 'atom-beta'
     abbr tr 'trash'
     abbr rmrf 'rm -rf'
+    abbr x xsv
 
     # aws:
     abbr awsls 'aws s3 ls --human-readable'
