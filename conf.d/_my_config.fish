@@ -2,7 +2,7 @@
 set -U Z_CMD "j"
 
 # default editor
-set -x VISUAL "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --wait"
+set -x VISUAL "atom-beta --wait"
 set -x EDITOR $VISUAL
 
 # Vi + Emacs keybindings:
