@@ -2,7 +2,7 @@
 set -U Z_CMD "j"
 
 # default editor
-set -x VISUAL "atom-beta --wait"
+set -x VISUAL "atom --wait"
 set -x EDITOR $VISUAL
 
 # Vi + Emacs keybindings:
