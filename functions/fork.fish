@@ -30,11 +30,14 @@ function fork --argument-names arg prefix --description 'Clones a repository to 
     test -z "$prefix"
     and set -l prefix $clone_prefix
 
-    test -d $prefix/$fork
-    and echo "$fork already exists"
-    or git clone https://github.com/$org/$name.git $prefix/$fork
+    set -l destination "$prefix/$org/$name"
 
-    cd $prefix/$fork
+    test -d $destination
+    and echo "$destination already exists"
+    or git clone https://github.com/$org/$name.git $destination
+    and ln -s $destination "$prefix/$fork"
+
+    cd $destination
     or begin
         print_usage
         return 1
