@@ -23,9 +23,8 @@ function fork --argument-names arg prefix --description 'Clones a repository to 
     or [ $argv[1] = "--help" ]
     and print_usage; and return 0
 
-    set -l org (basename (dirname "$arg"))
-    set -l name (basename "$arg" .git)
-    set -l fork "$user/$name"
+    set -l matches (string match -i -r -- '(github.com/)?([^/]+/[^/?]+)' "$arg")
+    set -l fork $matches[-1]
 
     test -z "$prefix"
     and set -l prefix $clone_prefix
