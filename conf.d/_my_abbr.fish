@@ -29,6 +29,7 @@ if not set -q _abbr_set
     abbr gca  'git commit -am'
     abbr gd   'git diff'
     abbr gp   'git push'
+    abbr gpf  'git push --force-with-lease'
     abbr gl   'git pull'
     abbr gpr  'git pull-request'
     abbr gdm  'git delete-merged-branches'
