@@ -15,3 +15,5 @@ fish_vi_cursor
 # set -g 'fish_cursor_replace-one' underscore
 
 set -x LANG 'en_US.UTF-8'
+
+set -x FZF_DEFAULT_OPTS '--height "40%" --reverse --ansi --border --inline-info --tabstop=4'

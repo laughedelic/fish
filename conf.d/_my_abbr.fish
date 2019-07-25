@@ -35,6 +35,7 @@ if not set -q _abbr_set
     abbr gdm  'git delete-merged-branches'
     abbr glg  'git log'
     abbr glg1 'git log --oneline'
+    abbr gf   'git fetch --tags --force --prune'
 
     # exa:
     abbr la 'll -a'
