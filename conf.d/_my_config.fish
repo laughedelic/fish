@@ -1,6 +1,3 @@
-# use j for autojump (z plugin)
-set -U Z_CMD "j"
-
 # default editor
 set -x VISUAL "atom --wait"
 set -x EDITOR $VISUAL
@@ -17,3 +14,5 @@ fish_vi_cursor
 set -x LANG 'en_US.UTF-8'
 
 set -x FZF_DEFAULT_OPTS '--height "40%" --reverse --ansi --border --inline-info --tabstop=4'
+
+zoxide init fish | source
